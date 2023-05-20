@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { ProfileContainer } from './Profile.styled';
 
 const Profile = ({ 
     username, 
