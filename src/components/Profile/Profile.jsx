@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { ProfileContainer } from './Profile.styled';
+import { ProfileContainer, DescriptionContainer, Avatar,Name, Tag, Location, List, Item, TitleStat, QuantityStat } from './Profile.styled';
 
 const Profile = ({ 
     username, 
@@ -8,33 +8,29 @@ const Profile = ({
     avatar = 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png', 
     stats : { followers, views, likes } }) => {
     return (
-    <div className="profile">
-    <div className="description">
-        <img
-        src={ avatar }
-        alt="User avatar"
-        className="avatar"
-        />
-        <p className="name">{ username }</p>
-        <p className="tag">{ tag }</p>
-        <p className="location">{ location }</p>
-    </div>
+    <ProfileContainer>
+    <DescriptionContainer>
+        <Avatar src={avatar} alt='user avatar'></Avatar>
+        <Name>{ username }</Name>
+        <Tag>@{ tag }</Tag>
+        <Location> { location } </Location>
+    </DescriptionContainer>
 
-    <ul className="stats">
-        <li>
-        <span className="label">Followers</span>
-        <span className="quantity">{ followers }</span>
-        </li>
-        <li>
-        <span className="label">Views</span>
-        <span className="quantity">{ views }</span>
-        </li>
-        <li>
-        <span className="label">Likes</span>
-        <span className="quantity">{ likes }</span>
-        </li>
-    </ul>
-    </div>
+    <List>
+        <Item>
+            <TitleStat>Followers</TitleStat>
+            <QuantityStat>{ followers }</QuantityStat>
+        </Item>
+        <Item>
+            <TitleStat>Views</TitleStat>
+            <QuantityStat>{ views }</QuantityStat>
+        </Item>
+        <Item>
+            <TitleStat>Likes</TitleStat>
+            <QuantityStat>{ likes }</QuantityStat>
+        </Item>
+    </List>
+    </ProfileContainer>
     );
 }
 
