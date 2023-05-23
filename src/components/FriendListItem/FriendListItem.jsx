@@ -3,7 +3,7 @@ import { ItemFriend, OnlineFriend, AvatarFriend, NameFriend } from './FriendList
 
 const FriendListItem = ({ item }) => {
     return (
-            <ItemFriend key={item.id}>
+            <ItemFriend>
                 <OnlineFriend isOnline= {item.isOnline}></OnlineFriend>
                 <AvatarFriend src={item.avatar} alt={item.name}></AvatarFriend>
                 <NameFriend>{item.name}</NameFriend>

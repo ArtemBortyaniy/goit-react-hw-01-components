@@ -4,7 +4,7 @@ import { Section, TitleStatistics, ListStatistics, ItemStatistics, Label, Percen
 const Statistics = ({title, stats}) => {
     return (
         <Section>
-        {title.length > 0 && <TitleStatistics>{title}</TitleStatistics>}
+        {title && <TitleStatistics>{title}</TitleStatistics>}
         <ListStatistics>
         {stats.map(stats => (
         <ItemStatistics key={stats.id}>
